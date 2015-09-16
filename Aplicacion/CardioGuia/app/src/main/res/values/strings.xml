@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CardioGuia</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_pantalla_home">PantallaHome</string>
+    <string name="title_activity_mediciones">Mediciones</string>
+    <string name="title_activity_historial">Historial</string>
+    <string name="title_activity_meta">Meta</string>
+    <string name="title_activity_hta">Hta</string>
+    <string name="title_activity_videos">Videos</string>
+    <string name="title_activity_tips">Tips</string>
+    <string name="title_activity_buen_comer">BuenComer</string>
+    <string name="title_activity_buen_ejercicio">BuenEjercicio</string>
+</resources>
