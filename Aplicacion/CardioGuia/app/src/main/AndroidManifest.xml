@@ -56,6 +56,12 @@
             android:name=".BuenEjercicio"
             android:label="@string/title_activity_buen_ejercicio" >
         </activity>
+        <receiver android:name=".broadcast.BroadcastNotification">
+            <intent-filter>
+                <action android:name="com.example.daniel_alfredo.cardioguia.action.NOTIFY"/>
+
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

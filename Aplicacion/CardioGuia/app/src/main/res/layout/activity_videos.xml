@@ -1,12 +1,104 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.daniel_alfredo.cardioguia.Videos">
+    tools:context="com.example.daniel_alfredo.cardioguia.Videos"
+    android:background="@drawable/fondo">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="En esta seccion podras aprender acerca de la hipertension arterial y la manera adecuada de  medir tu presion"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/linearLayout3"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:background="@drawable/cuadro_gris">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="62dp"
+            android:id="@+id/imageView"
+            android:background="@drawable/tomar_presion"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   ¿Como tomar su presion arterial?\n"
+                android:id="@+id/textView2"
+                android:textColor="#000000"/>
+
+            <ImageButton
+                android:layout_width="105dp"
+                android:layout_height="36dp"
+                android:id="@+id/btnver1"
+                android:layout_gravity="right"
+                android:background="@drawable/btnvervideo"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cuadro_gris">
+
+        <ImageView
+            android:layout_width="102dp"
+            android:layout_height="63dp"
+            android:id="@+id/imageView2"
+            android:background="@drawable/hipertencion_video"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    La hipertension arterial\n"
+                android:id="@+id/textView3"
+                android:textColor="#000000"/>
+
+            <ImageButton
+                android:layout_width="110dp"
+                android:layout_height="37dp"
+                android:id="@+id/btnver2"
+                android:layout_gravity="right"
+                android:background="@drawable/btnvervideo"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

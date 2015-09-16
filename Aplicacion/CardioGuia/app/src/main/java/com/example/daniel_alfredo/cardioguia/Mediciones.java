@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.daniel_alfredo.cardioguia.database.CardioBaseDB;
+import com.example.daniel_alfredo.cardioguia.models.Presion;
 
 import static android.widget.Toast.makeText;
 
@@ -124,7 +125,8 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
         }
 
         if (boton == 2){
-            Toast.makeText(this, "Ir a HTA", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Ir a Meta", Toast.LENGTH_LONG).show();
+
 
             Intent intent = new Intent();
             intent.setClass(this, Meta.class);
@@ -132,9 +134,12 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
         }
 
         if (boton == 3){
-            Toast.makeText(this, "Guaradado " +  fechayHora.getText().toString(), Toast.LENGTH_LONG).show();
-            CardioBaseDB manager = new CardioBaseDB(this);
-            //manager.insertaDatos(fechayHora.getText().toString(), sistolica.getText().toString(), diastolica.getText().toString(), pulso.getText().toString());
+
+            /*Presion datos = new Presion(fechayHora.getText().toString(), sistolica.getText().toString(), diastolica.getText().toString()
+            , pulso.getText().toString());
+            CardioBaseDB cardioBaseDB = new CardioBaseDB(this);
+            cardioBaseDB.insertaDatos(datos);*/
+            Toast.makeText(this, "Guaradado ", Toast.LENGTH_LONG).show();
 
         }
 

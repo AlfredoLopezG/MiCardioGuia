@@ -19,8 +19,8 @@ public class Presion {
                 '}';
     }
 
-    public Presion(String fechayhora, String sistolica, String diastolica, String presion) {
-        this.fechayhora = fechayhora;
+    public Presion(String FechayHora, String sistolica, String diastolica, String presion) {
+        this.fechayhora = FechayHora;
         this.sistolica = sistolica;
         this.diastolica = diastolica;
         this.presion = presion;

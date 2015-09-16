@@ -2,9 +2,12 @@ package com.example.daniel_alfredo.cardioguia.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.daniel_alfredo.cardioguia.models.Presion;
+
+import java.util.ArrayList;
 
 
 /**
@@ -38,4 +41,32 @@ public class CardioBaseDB {
         db.insert(DataBaseHelper.TABLE_PRESION, null, values);
         db.close();
     }
+
+    public ArrayList<Presion> getAllProducts() {
+        ArrayList<Presion> presions = new ArrayList<>();
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM" + DataBaseHelper.TABLE_PRESION, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                String fechayhora = cursor.getString(0);
+                String sistolica = cursor.getString(1);
+                String diastolica = cursor.getString(2);
+                String pulso = cursor.getString(1);
+
+
+                Presion presion = new Presion(fechayhora, sistolica, diastolica, pulso);
+                presions.add(presion);
+
+            }while (cursor.moveToNext());
+
+        }else{
+
+        }
+
+        return presions;
+
+    }
+
 }

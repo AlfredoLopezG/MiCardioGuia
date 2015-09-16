@@ -48,7 +48,6 @@ public class PantallaHome extends Activity implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 irALaSiguientePantalla(1);
-
             }
         });
 
@@ -174,16 +173,7 @@ public class PantallaHome extends Activity implements View.OnClickListener {
 
     }
 
-    /*private void lanzarMensajeDeBroadcast(){
-        String action= "com.example.daniel_alfredo.targetcares.action.NOTIFY";
 
-        //Creamos el inent con la accion que queremos ejecutar
-        Intent i = new Intent();
-        i.setAction(action);
-
-        //Enviar el mensaje de broadcast
-        sendBroadcast(i);
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
