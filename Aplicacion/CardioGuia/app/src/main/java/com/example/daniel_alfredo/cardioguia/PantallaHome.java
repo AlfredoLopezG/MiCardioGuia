@@ -109,8 +109,6 @@ public class PantallaHome extends Activity implements View.OnClickListener {
 
     private void irALaSiguientePantalla(int boton){
         if (boton == 1){
-            Toast.makeText(this, "Ir secciones", Toast.LENGTH_LONG).show();
-
             Intent intent = new Intent();
             intent.setClass(this, Mediciones.class);
 
@@ -125,7 +123,6 @@ public class PantallaHome extends Activity implements View.OnClickListener {
         }
 
         if (boton == 2){
-            Toast.makeText(this, "Ir a HTA", Toast.LENGTH_LONG).show();
             Intent intent = new Intent();
             intent.setClass(this, Hta.class);
             startActivity(intent);
@@ -133,21 +130,18 @@ public class PantallaHome extends Activity implements View.OnClickListener {
 
 
         if (boton == 3){
-            Toast.makeText(this, "Ir a Videos", Toast.LENGTH_LONG).show();
             Intent intent = new Intent();
             intent.setClass(this, Videos.class);
             startActivity(intent);
         }
 
         if (boton == 4){
-            Toast.makeText(this, "Ir a Tips", Toast.LENGTH_LONG).show();
             Intent intent = new Intent();
             intent.setClass(this, Tips.class);
             startActivity(intent);
         }
 
         if (boton == 5){
-            Toast.makeText(this, "Ir a Buen comer", Toast.LENGTH_LONG).show();
             Intent intent = new Intent();
             intent.setClass(this, BuenComer.class);
             startActivity(intent);
@@ -155,7 +149,6 @@ public class PantallaHome extends Activity implements View.OnClickListener {
 
 
         if (boton == 6){
-            Toast.makeText(this, "Ir a Buen Ejercicio", Toast.LENGTH_LONG).show();
             Intent intent = new Intent();
             intent.setClass(this, BuenEjercicio.class);
             startActivity(intent);

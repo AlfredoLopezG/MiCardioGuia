@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/appicon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -56,12 +56,16 @@
             android:name=".BuenEjercicio"
             android:label="@string/title_activity_buen_ejercicio" >
         </activity>
-        <receiver android:name=".broadcast.BroadcastNotification">
-            <intent-filter>
-                <action android:name="com.example.daniel_alfredo.cardioguia.action.NOTIFY"/>
 
+        <receiver android:name=".broadcast.BroadcastNotification" >
+            <intent-filter>
+                <action android:name="com.example.daniel_alfredo.cardioguia.action.NOTIFY" />
             </intent-filter>
         </receiver>
+        <activity
+            android:name=".Ejercicios"
+            android:label="@string/title_activity_ejercicios" >
+        </activity>
     </application>
 
 </manifest>

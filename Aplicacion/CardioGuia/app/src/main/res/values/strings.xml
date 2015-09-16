@@ -13,4 +13,21 @@
     <string name="title_activity_tips">Tips</string>
     <string name="title_activity_buen_comer">BuenComer</string>
     <string name="title_activity_buen_ejercicio">BuenEjercicio</string>
+    <string name="title_activity_ejercicio1">Ejercicio1</string>
+    <string name="title_activity_ejercicio2">Ejercicio2</string>
+    <string name="title_activity_ejercicio3">Ejercicio3</string>
+    <string name="title_activity_ejercicio4">Ejercicio4</string>
+    <string name="title_activity_ejercicio5">Ejercicio5</string>
+    <string name="title_activity_ejercicio6">Ejercicio6</string>
+    <string name="title_activity_ejercicio7">Ejercicio7</string>
+    <string name="title_activity_ejercicio8">Ejercicio8</string>
+    <string name="title_activity_ejercicio9">Ejercicio9</string>
+    <string name="title_activity_ejercicio10">Ejercicio10</string>
+    <string name="title_activity_ejercicio11">Ejercicio11</string>
+    <string name="title_activity_ejercicio12">Ejercicio12</string>
+    <string name="title_activity_ejercicio13">Ejercicio13</string>
+    <string name="title_activity_ejercicio14">Ejercicio14</string>
+    <string name="title_activity_ejercicio15">Ejercicio15</string>
+    <string name="title_activity_ejercicio16">Ejercicio16</string>
+    <string name="title_activity_ejercicios">Ejercicios</string>
 </resources>

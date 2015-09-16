@@ -33,10 +33,10 @@ public class Notifications {
         builder.setWhen(System.currentTimeMillis());
 
         //Titulo de la notificacion
-        builder.setContentTitle("Nuevo Tips");
+        builder.setContentTitle("Nuevo Tip de la Semana");
 
         //Mensaje de la notificacion
-        builder.setContentText("Nuevo tip de la semana");
+        builder.setContentText("La presion arterial es la que se conoce como \"alta\" ");
 
         //peding Intent
         builder.setContentIntent(pendingIntent);

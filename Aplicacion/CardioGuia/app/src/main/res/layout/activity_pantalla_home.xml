@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.daniel_alfredo.cardioguia.PantallaHome"
-    android:background="@drawable/fondo"
-    >
+    android:background="@drawable/fondo">
 
 
     <ImageButton
