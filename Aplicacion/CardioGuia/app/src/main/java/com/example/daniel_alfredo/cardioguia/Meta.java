@@ -1,5 +1,6 @@
 package com.example.daniel_alfredo.cardioguia;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.daniel_alfredo.cardioguia.data.AppData;
 
 public class Meta extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,24 +26,27 @@ public class Meta extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_meta);
 
         initViews();
-        //if(conf.getsotilica() != null)
-            //lblEmail.setText(conf.getUserEmail());
     }
 
     private void initViews(){
         sistolicaalta =(EditText)findViewById(R.id.sistolicaalta);
         diastolicabaja =(EditText)findViewById(R.id.diastolicabaja);
         btnAceptar = (Button)findViewById(R.id.btnAceptar);
+
         btnAceptar.setOnClickListener(this);
+
+        sistolicaalta.setText(AppData.getSistolica(this));
+        diastolicabaja.setText(AppData.getDiastolica(this));
+
     }
 
 
 
     @Override
     public void onClick(View v) {
-        String valorsostilica = sistolicaalta.getText().toString() ;
-        String valordiastolica = diastolicabaja.getText().toString();
-
+        Toast.makeText(this, "Guardado",Toast.LENGTH_LONG ).show();
+        AppData.setsistolica(getBaseContext(), sistolicaalta.getText().toString());
+        AppData.setDiastolica(getBaseContext(), diastolicabaja.getText().toString());
 
     }
 

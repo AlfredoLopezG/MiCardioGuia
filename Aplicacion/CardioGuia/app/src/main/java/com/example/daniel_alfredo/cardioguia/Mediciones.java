@@ -139,7 +139,7 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
             , pulso.getText().toString());
             CardioBaseDB cardioBaseDB = new CardioBaseDB(this);
             cardioBaseDB.insertaDatos(datos);*/
-            Toast.makeText(this, "Guaradado ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Guardado ", Toast.LENGTH_LONG).show();
 
         }
 
