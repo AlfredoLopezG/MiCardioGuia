@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".PantallaHome"
-            android:label="@string/title_activity_pantalla_home" >
+            android:label="CardioGuia" >
         </activity>
         <activity
             android:name=".Mediciones"

@@ -11,15 +11,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME="CardioGuia.sqlite";
 
-    public static final String TABLE_PRESION ="Presion";
 
-    private final String generatePresion =
-            "CREATE TABLE" + TABLE_PRESION + "(id TEXT, fechayhora TEXT, sistolica TEXT, diastolica TEXT, pulso TEXT)";
 
-    private final String dropPrecion = "DROP TABLE IF EXIST" + TABLE_PRESION;
-
-    public DataBaseHelper (Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
-        super(context, name, factory, version);
+    public DataBaseHelper (Context context){
+        super(context, DATABASE_NAME, null, 1);
     }
 
 
@@ -27,14 +22,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL(generatePresion);
+        db.execSQL(DataBaseManager.CREATE_TABLE);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(dropPrecion);
-        onCreate(db);
+
 
     }
 }

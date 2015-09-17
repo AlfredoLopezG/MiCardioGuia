@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="En esta seccion podras aprender acerca de la hipertension arterial y la manera adecuada de  medir tu presion"
+        android:text="En esta seccion podras aprender acerca de la hipertension arterial y la manera adecuada de  medir tu pulso"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_marginTop="24dp"
         android:id="@+id/linearLayout3"
         android:layout_below="@+id/textView"
@@ -47,7 +47,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   ¿Como tomar su presion arterial?\n"
+                android:text="   ¿Como tomar su pulso arterial?\n"
                 android:id="@+id/textView2"
                 android:textColor="#000000"/>
 
@@ -66,7 +66,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_marginTop="33dp"
         android:layout_below="@+id/linearLayout3"
         android:layout_centerHorizontal="true"

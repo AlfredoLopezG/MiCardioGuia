@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Sistólica (alta): "
             android:id="@+id/tvsistolicaalta"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:textColor="#000000" />
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:text="Diastolica(baja) "
             android:id="@+id/tvdiastolicabaja"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:layout_gravity="center"

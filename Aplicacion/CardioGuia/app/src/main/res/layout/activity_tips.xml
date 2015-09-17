@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="La presión arterial sistolica es la que se conoce como &quot;alta&quot;"
+            android:text="La presión arterial dato es la que se conoce como &quot;alta&quot;"
             android:id="@+id/textView4"
             android:textColor="#000000"/>
     </LinearLayout>

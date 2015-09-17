@@ -1,7 +1,7 @@
 package com.example.daniel_alfredo.cardioguia;
 
-import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,8 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.daniel_alfredo.cardioguia.database.CardioBaseDB;
-import com.example.daniel_alfredo.cardioguia.models.Presion;
+import com.example.daniel_alfredo.cardioguia.database.DataBaseHelper;
+import com.example.daniel_alfredo.cardioguia.database.DataBaseManager;
 
 import static android.widget.Toast.makeText;
 
@@ -83,9 +83,6 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
             }
         });
 
-
-
-
     }
 
     @Override
@@ -117,7 +114,6 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
 
     private void irALaSiguientePantalla2(int boton){
         if (boton == 1){
-            Toast.makeText(this, "Ir Historiales", Toast.LENGTH_LONG).show();
 
             Intent intent = new Intent();
             intent.setClass(this, Historial.class);
@@ -125,8 +121,6 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
         }
 
         if (boton == 2){
-            Toast.makeText(this, "Ir a Meta", Toast.LENGTH_LONG).show();
-
 
             Intent intent = new Intent();
             intent.setClass(this, Meta.class);
@@ -135,11 +129,20 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
 
         if (boton == 3){
 
-            /*Presion datos = new Presion(fechayHora.getText().toString(), sistolica.getText().toString(), diastolica.getText().toString()
-            , pulso.getText().toString());
-            CardioBaseDB cardioBaseDB = new CardioBaseDB(this);
-            cardioBaseDB.insertaDatos(datos);*/
-            Toast.makeText(this, "Guardado ", Toast.LENGTH_LONG).show();
+            String fyh = fechayHora.getText().toString();
+            String prs = (sistolica.getText().toString() +"/" + diastolica.getText().toString());
+            String pls = pulso.getText().toString();
+
+            Toast.makeText(this, "Guardado", Toast.LENGTH_LONG).show();
+
+            DataBaseManager manager = new DataBaseManager(this);
+            manager.insertarDatos(fyh, prs, pls);
+
+            Intent intent = new Intent();
+            intent.setClass(this, PantallaHome.class);
+            startActivity(intent);
+            finish();
+
 
         }
 
