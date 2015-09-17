@@ -15,15 +15,14 @@ public class DataBaseManager {
 
     public static final String ID = "_id";
     public static final String FECHAYHORA = "DiayHora";
-    public static final String PRESION = "SistolicaDiastolica";
-    public static final String PULSO = "Pulso";
+    public static final String PRESIONYPULSO = "Presion";
+
 
     public static final String CREATE_TABLE =
             "create table " +TABLE_DATOS+ " ("
             + ID + " integer primary key autoincrement,"
             + FECHAYHORA + " text,"
-            + PRESION + " text,"
-            + PULSO + " text);";
+            + PRESIONYPULSO + " text);";
 
     private DataBaseHelper helper;
     private SQLiteDatabase db;
@@ -34,23 +33,22 @@ public class DataBaseManager {
 
     }
 
-    public ContentValues generarContentValues(String fechayhora, String presion, String pulso){
+    public ContentValues generarContentValues(String fechayhora, String presionypulso){
         ContentValues valores = new ContentValues();
         valores.put(FECHAYHORA, fechayhora);
-        valores.put(PRESION, presion);
-        valores.put(PULSO, pulso);
+        valores.put(PRESIONYPULSO, presionypulso);
         return valores;
     }
 
 
-    public void insertarDatos(String fechayhora, String presion, String pulso){
+    public void insertarDatos(String fechayhora, String presionypulso){
 
-        db.insert(TABLE_DATOS, null, generarContentValues(fechayhora, presion, pulso));
+        db.insert(TABLE_DATOS, null, generarContentValues(fechayhora, presionypulso));
     }
 
     public Cursor cargarCursor (){
 
-        String[] columnas = new String[]{ID, FECHAYHORA, PULSO};
+        String[] columnas = new String[]{ID, FECHAYHORA, PRESIONYPULSO};
         return db.query(TABLE_DATOS, columnas, null, null, null, null, null);
     }
 

@@ -29,9 +29,9 @@ public class Historial extends AppCompatActivity {
 
         //Toast.makeText(this, presion, Toast.LENGTH_LONG).show();
 
-        String[] from = new String[]{manager.FECHAYHORA, manager.PULSO};
+        String[] from = new String[]{manager.FECHAYHORA, manager.PRESIONYPULSO};
+        //String[] from = new String[]{fromaux[0], (fromaux[1] + fromaux[2])};
         int[] to = new int [] {android.R.id.text1, android.R.id.text2};
-
         cursor = manager.cargarCursor();
         adapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item, cursor, from, to, 0);
         lvhistorial.setAdapter(adapter);

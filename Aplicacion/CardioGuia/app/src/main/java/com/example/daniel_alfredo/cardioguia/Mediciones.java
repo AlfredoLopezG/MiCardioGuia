@@ -133,10 +133,12 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
             String prs = (sistolica.getText().toString() +"/" + diastolica.getText().toString());
             String pls = pulso.getText().toString();
 
+            String presion = ("Presion: " + prs + "\nPulso: " + pls);
+
             Toast.makeText(this, "Guardado", Toast.LENGTH_LONG).show();
 
             DataBaseManager manager = new DataBaseManager(this);
-            manager.insertarDatos(fyh, prs, pls);
+            manager.insertarDatos(fyh, presion);
 
             Intent intent = new Intent();
             intent.setClass(this, PantallaHome.class);
