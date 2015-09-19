@@ -4,12 +4,16 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -25,6 +29,7 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
     private ImageButton btnbuenejercicio;
     private ImageButton btnalarmamedicamentos;
     private ImageButton btnalarmapresion;
+    private ImageView imgcorazon;
 
 
     @Override
@@ -37,6 +42,7 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
 
     private void initViews(){
 
+        imgcorazon = (ImageView)findViewById(R.id.imgcorazon);
         btnmediciones =(ImageButton)findViewById(R.id.imgbtnmediciones);
         btnhta =(ImageButton)findViewById(R.id.imgbtnhta);
         btnvideos =(ImageButton)findViewById(R.id.imgbtnvideos);
@@ -159,12 +165,16 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
 
 
         if (boton == 7){
-            Toast.makeText(this, "Ir a Alarma de medicamentos", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent();
+            intent.setClass(this, AlarmaMedicamentos.class);
+            startActivity(intent);
         }
 
 
         if (boton == 8){
-            Toast.makeText(this, "Ir a Alarma de Tomar presion", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent();
+            intent.setClass(this, AlarmaTomadePresion.class);
+            startActivity(intent);
         }
 
     }

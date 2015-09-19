@@ -62,9 +62,18 @@
                 <action android:name="com.example.daniel_alfredo.cardioguia.action.NOTIFY" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".Ejercicios"
             android:label="@string/title_activity_ejercicios" >
+        </activity>
+        <activity
+            android:name=".AlarmaMedicamentos"
+            android:label="@string/title_activity_alarma_medicamentos" >
+        </activity>
+        <activity
+            android:name=".AlarmaTomadePresion"
+            android:label="@string/title_activity_alarma_tomade_presion" >
         </activity>
     </application>
 

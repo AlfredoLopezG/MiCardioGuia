@@ -30,4 +30,6 @@
     <string name="title_activity_ejercicio15">Ejercicio15</string>
     <string name="title_activity_ejercicio16">Ejercicio16</string>
     <string name="title_activity_ejercicios">Ejercicios</string>
+    <string name="title_activity_alarma_medicamentos">AlarmaMedicamentos</string>
+    <string name="title_activity_alarma_tomade_presion">AlarmaTomadePresion</string>
 </resources>
