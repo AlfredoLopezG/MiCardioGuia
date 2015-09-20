@@ -23,34 +23,15 @@ public class Notifications {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
 
-        //Icono en la pantalla
         builder.setSmallIcon(R.drawable.appicon);
-
-        //TExto para cuando te llega la notificacion
         builder.setTicker("Se ha agregado un nuevo Tip");
-
-        //Cuando quieres la notificaion
         builder.setWhen(System.currentTimeMillis());
-
-        //Titulo de la notificacion
         builder.setContentTitle("Nuevo Tip de la Semana");
-
-        //Mensaje de la notificacion
         builder.setContentText("La presion arterial es la que se conoce como \"alta\" ");
-
-        //peding Intent
         builder.setContentIntent(pendingIntent);
-
-        //Crear la notificacion
         Notification notification = builder.build();
-
-        //Suene
         notification.defaults |= Notification.DEFAULT_SOUND;
-
-        //Vibre
         notification.defaults |= Notification.DEFAULT_VIBRATE;
-
-        //Encienda el led
         notification.defaults |= Notification.DEFAULT_LIGHTS;
 
         return notification;

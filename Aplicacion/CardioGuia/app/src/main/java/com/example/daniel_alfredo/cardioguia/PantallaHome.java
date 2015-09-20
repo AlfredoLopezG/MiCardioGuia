@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -51,6 +52,12 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
         btnbuenejercicio =(ImageButton)findViewById(R.id.imgbtnbuenejercicio);
         btnalarmamedicamentos =(ImageButton)findViewById(R.id.imgbtnalarmamedicamentos);
         btnalarmapresion=(ImageButton)findViewById(R.id.imgbtnalarmatomarpresion);
+
+        ScaleAnimation localScaleAnimation = new ScaleAnimation(1.0F, 1.2F, 1.0F, 1.2F, 50.0F, 50.0F);
+        localScaleAnimation.setRepeatCount(-1);
+        localScaleAnimation.setDuration(700L);
+        imgcorazon.setAnimation(localScaleAnimation);
+
 
 
         btnmediciones.setOnClickListener(new View.OnClickListener() {
@@ -202,6 +209,7 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }
 

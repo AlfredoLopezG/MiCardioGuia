@@ -50,11 +50,11 @@
         </activity>
         <activity
             android:name=".BuenComer"
-            android:label="@string/title_activity_buen_comer" >
+            android:label="Buen Comer" >
         </activity>
         <activity
             android:name=".BuenEjercicio"
-            android:label="@string/title_activity_buen_ejercicio" >
+            android:label="Buen Ejercicio" >
         </activity>
 
         <receiver android:name=".broadcast.BroadcastNotification" >
@@ -69,11 +69,11 @@
         </activity>
         <activity
             android:name=".AlarmaMedicamentos"
-            android:label="@string/title_activity_alarma_medicamentos" >
+            android:label="Alarma de Medicamentos" >
         </activity>
         <activity
             android:name=".AlarmaTomadePresion"
-            android:label="@string/title_activity_alarma_tomade_presion" >
+            android:label="Alarma de toma de Presion" >
         </activity>
     </application>
 
