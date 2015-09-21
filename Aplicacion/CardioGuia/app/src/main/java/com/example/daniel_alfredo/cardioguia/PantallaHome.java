@@ -1,22 +1,23 @@
 package com.example.daniel_alfredo.cardioguia;
 
-import android.app.ActionBar;
-import android.app.Activity;
+
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
-import android.media.Image;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
-
+import android.widget.TableRow;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -32,16 +33,65 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
     private ImageButton btnalarmapresion;
     private ImageView imgcorazon;
 
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private final String ACTIONBAR_COLOR = "#FF0000";
+    private String mCurrentTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_home);
 
+        initSlidingMenu();
         initViews();
     }
 
+
+
     private void initViews(){
+
+        TableRow btnHome=(TableRow)findViewById(R.id.entryHome);
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irALaSiguientePantalla(10);
+            }
+        });
+
+        TableRow btnMedicamentos=(TableRow)findViewById(R.id.entryMedicamentos);
+        btnMedicamentos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irALaSiguientePantalla(7);
+            }
+        });
+
+        TableRow btnPresion=(TableRow)findViewById(R.id.entryPresion);
+        btnPresion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irALaSiguientePantalla(8);
+            }
+        });
+
+        TableRow btnHistorial=(TableRow)findViewById(R.id.entryHistorial);
+        btnHistorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irALaSiguientePantalla(11);
+            }
+        });
+
+        TableRow btnConfiguraciones=(TableRow)findViewById(R.id.entryConfiguracion);
+        btnConfiguraciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irALaSiguientePantalla(9);
+            }
+        });
+
 
         imgcorazon = (ImageView)findViewById(R.id.imgcorazon);
         btnmediciones =(ImageButton)findViewById(R.id.imgbtnmediciones);
@@ -172,6 +222,7 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
 
 
         if (boton == 7){
+            mDrawerLayout.closeDrawers();
             Intent intent = new Intent();
             intent.setClass(this, AlarmaMedicamentos.class);
             startActivity(intent);
@@ -179,37 +230,93 @@ public class PantallaHome extends AppCompatActivity implements View.OnClickListe
 
 
         if (boton == 8){
+            mDrawerLayout.closeDrawers();
             Intent intent = new Intent();
             intent.setClass(this, AlarmaTomadePresion.class);
             startActivity(intent);
         }
 
+        if (boton == 9){
+            mDrawerLayout.closeDrawers();
+            Intent intent = new Intent();
+            intent.setClass(this, Configuracion.class);
+            startActivity(intent);
+        }
+
+        if (boton == 10){
+            mDrawerLayout.closeDrawers();
+        }
+
+        if (boton == 11){
+            mDrawerLayout.closeDrawers();
+            Intent intent = new Intent();
+            intent.setClass(this, Historial.class);
+            startActivity(intent);
+        }
+
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_pantalla_home, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    private void initSlidingMenu() {
+        final ActionBar actionBar = getSupportActionBar();
+
+        mCurrentTitle = "CardioGuia";
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
+                GravityCompat.START);
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
+
+        actionBar.setBackgroundDrawable(
+                new ColorDrawable(Color.parseColor(ACTIONBAR_COLOR)));
+
+        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, R.string.drawer_open,R.string.drawer_close) {
+            public void onDrawerClosed(View view) {
+                actionBar.setTitle(mCurrentTitle);
+                supportInvalidateOptionsMenu();
+                super.onDrawerClosed(view);
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                actionBar.setTitle("CardioGuia");
+                supportInvalidateOptionsMenu();
+                super.onDrawerOpened(drawerView);
+            }
+        };
+
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
+    }
 
 }
 

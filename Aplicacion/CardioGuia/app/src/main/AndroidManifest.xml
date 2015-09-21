@@ -75,6 +75,10 @@
             android:name=".AlarmaTomadePresion"
             android:label="Alarma de toma de Presion" >
         </activity>
+        <activity
+            android:name=".Configuracion"
+            android:label="@string/title_activity_configuracion" >
+        </activity>
     </application>
 
 </manifest>

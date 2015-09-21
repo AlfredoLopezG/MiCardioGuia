@@ -1,7 +1,6 @@
 package com.example.daniel_alfredo.cardioguia;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,11 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
-import com.example.daniel_alfredo.cardioguia.database.DataBaseHelper;
 import com.example.daniel_alfredo.cardioguia.database.DataBaseManager;
 
-import static android.widget.Toast.makeText;
 
 public class Mediciones extends AppCompatActivity implements View.OnClickListener{
 
@@ -32,8 +28,6 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mediciones);
         initViews();
-        //SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        //String currentDateandTime = sdf.format(new Date());
 
         Bundle bundle = this.getIntent().getExtras();
 
@@ -74,10 +68,10 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((fechayHora.getText().toString().trim().length() <=0)||(sistolica.getText().toString().trim().length() <=0)||
-                        (diastolica.getText().toString().trim().length() <=0)||(pulso.getText().toString().trim().length() <=0)){
+                if ((fechayHora.getText().toString().trim().length() <= 0) || (sistolica.getText().toString().trim().length() <= 0) ||
+                        (diastolica.getText().toString().trim().length() <= 0) || (pulso.getText().toString().trim().length() <= 0)) {
                     irALaSiguientePantalla2(4);
-                }else{
+                } else {
                     irALaSiguientePantalla2(3);
                 }
             }
@@ -87,19 +81,14 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_mediciones, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -152,4 +141,5 @@ public class Mediciones extends AppCompatActivity implements View.OnClickListene
             Toast.makeText(this, "No se puede guardar por que hay campos vacios", Toast.LENGTH_LONG).show();
         }
     }
+
 }

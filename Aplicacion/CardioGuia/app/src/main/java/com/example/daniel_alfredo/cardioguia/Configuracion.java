@@ -5,17 +5,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class AlarmaTomadePresion extends AppCompatActivity {
+public class Configuracion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alarma_tomade_presion);
+        setContentView(R.layout.activity_configuracion);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_alarma_tomade_presion, menu);
+        getMenuInflater().inflate(R.menu.menu_configuracion, menu);
         return true;
     }
 

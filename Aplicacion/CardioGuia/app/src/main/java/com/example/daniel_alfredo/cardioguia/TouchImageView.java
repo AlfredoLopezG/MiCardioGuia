@@ -16,14 +16,12 @@ import android.widget.ImageView;
 
 public class TouchImageView extends ImageView {
     Matrix matrix;
-    // We can be in one of these 3 states
     static final int NONE = 0;
     static final int DRAG = 1;
     static final int ZOOM = 2;
 
     int mode = NONE;
 
-    // Remember some things for zooming
     PointF last = new PointF();
     PointF start = new PointF();
     float minScale = 1f;
@@ -138,7 +136,7 @@ public class TouchImageView extends ImageView {
 
                 invalidate();
 
-                return true; // indicate event was handled
+                return true;
 
             }
 
@@ -272,9 +270,7 @@ public class TouchImageView extends ImageView {
 
         viewHeight = MeasureSpec.getSize(heightMeasureSpec);
 
-        //
-        // Rescales image on rotation
-        //
+
         if (oldMeasuredHeight == viewWidth && oldMeasuredHeight == viewHeight
 
                 || viewWidth == 0 || viewHeight == 0)
@@ -286,8 +282,6 @@ public class TouchImageView extends ImageView {
         oldMeasuredWidth = viewWidth;
 
         if (saveScale == 1) {
-
-            //Fit to screen.
 
             float scale;
 
@@ -311,7 +305,6 @@ public class TouchImageView extends ImageView {
 
             matrix.setScale(scale, scale);
 
-            // Center the image
 
             float redundantYSpace = (float) viewHeight - (scale * (float) bmHeight);
 

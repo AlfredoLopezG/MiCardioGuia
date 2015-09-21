@@ -17,7 +17,6 @@ public class BroadcastNotification extends BroadcastReceiver {
         Notification notification = notifications.createNotification(context);
 
         NotificationManager notificaionManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        //ID de notificacion
         int notifificationId = 100;
         notificaionManager.notify(notifificationId, notification);
 

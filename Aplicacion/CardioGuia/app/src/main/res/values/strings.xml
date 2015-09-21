@@ -32,4 +32,10 @@
     <string name="title_activity_ejercicios">Ejercicios</string>
     <string name="title_activity_alarma_medicamentos">AlarmaMedicamentos</string>
     <string name="title_activity_alarma_tomade_presion">AlarmaTomadePresion</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="title_activity_configuracion">Configuracion</string>
 </resources>
